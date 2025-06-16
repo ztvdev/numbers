@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:numbers/core/app_colors.dart';
+import 'package:numbers/view/home/ui/home_screen.dart';
 
 void main() {
   runApp(const MainApp());
@@ -9,12 +11,22 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        scaffoldBackgroundColor: AppColors.firstColor,
+        appBarTheme: AppBarTheme(
+          backgroundColor: AppColors.secondColor,
+          centerTitle: true,
+          iconTheme: IconThemeData(color: AppColors.firstColor, size: 34),
+          titleTextStyle: TextStyle(
+            color: AppColors.firstColor,
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+          ),
         ),
       ),
+      home: HomeScreen(),
     );
   }
 }
